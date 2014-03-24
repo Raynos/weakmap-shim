@@ -36,6 +36,11 @@ var value = store(key)
 
 // `value` is weakly bound to `key`. `value` is a plain object
 value.foo = 'bar'
+
+var value2 = store(key)
+
+var v = value2.foo; // 'bar'
+var bool = value === value2; // true
 ```
 
 ## Motivation
