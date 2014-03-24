@@ -15,10 +15,42 @@ A minimal weakmap shim
 ## Example
 
 ```js
-var weakmapShim = require("weakmap-shim")
+var weakMap = require("weakmap-shim")
 
-// TODO. Show example
+var map = weakMap()
+var key = {}
+
+map.set(key, 'some value')
+var v = map.get(key) // 'some value'
 ```
+
+## create-store Example
+
+```js
+var createStore = require('weakmap-shim/create-store')
+
+var store = createStore()
+var key = {}
+
+var value = store(key)
+
+// `value` is weakly bound to `key`. `value` is a plain object
+value.foo = 'bar'
+```
+
+## Motivation
+
+Benvie has an excellent [weakmap](https://github.com/Benvie/WeakMap)
+  module that's far more robust. However it contains quite a bit
+  of loc.
+
+ - `weakmap` : 7451 bytes
+ - `weakmap-shim` : 2106 bytes
+ - `weakmap-shim/create-store` : 1311 bytes
+
+This module is only worthwhile if you want to add a weakmap to 
+  a small module (10 - 30 loc) and dont want to bloat it with
+  a heavier weakmap
 
 ## Installation
 
