@@ -6,7 +6,9 @@ function createStore() {
     var key = {};
 
     return function (obj) {
-        if (typeof obj !== 'object' || obj === null) {
+        if ((typeof obj !== 'object' || obj === null) &&
+            typeof obj !== 'function'
+        ) {
             throw new Error('Weakmap-shim: Key must be object')
         }
 
