@@ -1,6 +1,6 @@
 {
   "name": "weakmap-shim",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "A minimal weakmap shim",
   "keywords": [],
   "author": "Raynos <raynos2@gmail.com>",
