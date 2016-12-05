@@ -35,6 +35,14 @@ test('weakMap does not work with string keys', function (assert) {
     assert.end()
 })
 
+test('weakMap set returns self', function (assert) {
+    var map = weakMap();
+
+    assert.equal(map.set({}, 'bar'), map);
+
+    assert.end();
+})
+
 test('weakMap has()', function (assert) {
     var map = weakMap()
 
